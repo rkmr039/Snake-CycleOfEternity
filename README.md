@@ -1,1 +1,1 @@
-# snake-vibe-game
+# Snake-CycleOfEternity
