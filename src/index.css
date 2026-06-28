@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root, body[data-theme='cyber-dark'] {
+  --neon-cyan: #00e5ff;
+  --neon-cyan-glow: rgba(0, 229, 255, 0.4);
+  --neon-purple: #b026ff;
+  --neon-purple-glow: rgba(176, 38, 255, 0.4);
+  --neon-pink: #ff2a74;
+  --neon-pink-glow: rgba(255, 42, 116, 0.4);
+  --neon-emerald: #05f2c7;
+  --neon-emerald-glow: rgba(5, 242, 199, 0.4);
+  --neon-red: #ff2a2a;
+  --neon-red-glow: rgba(255, 42, 42, 0.4);
+  --neon-gold: #ffd700;
+  --neon-gold-glow: rgba(255, 215, 0, 0.4);
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(6, 11, 25, 0.7);
+  --body-bg: #030712;
+  --grid-color: rgba(0, 229, 255, 0.015);
+  --dropdown-bg: #060b19;
+}
+
+body[data-theme='forest-green'] {
+  --neon-cyan: #22c55e;
+  --neon-cyan-glow: rgba(34, 197, 94, 0.4);
+  --neon-purple: #10b981;
+  --neon-purple-glow: rgba(16, 185, 129, 0.4);
+  --neon-pink: #84cc16;
+  --neon-pink-glow: rgba(132, 204, 22, 0.4);
+  --neon-emerald: #4ade80;
+  --neon-emerald-glow: rgba(74, 222, 128, 0.4);
+  --neon-red: #ef4444;
+  --neon-red-glow: rgba(239, 68, 68, 0.4);
+  --neon-gold: #fbbf24;
+  --neon-gold-glow: rgba(251, 191, 36, 0.4);
+  --text-primary: #ffffff;
+  --text-secondary: #a7f3d0;
+  --text-muted: #34d399;
+  --glass-border: rgba(74, 222, 128, 0.15);
+  --glass-bg: rgba(2, 24, 16, 0.8);
+  --body-bg: #011c12;
+  --grid-color: rgba(34, 197, 94, 0.015);
+  --dropdown-bg: #021a11;
+}
+
+body[data-theme='pink-vibe'] {
+  --neon-cyan: #ff2a74;
+  --neon-cyan-glow: rgba(255, 42, 116, 0.4);
+  --neon-purple: #d946ef;
+  --neon-purple-glow: rgba(217, 70, 239, 0.4);
+  --neon-pink: #f43f5e;
+  --neon-pink-glow: rgba(244, 63, 94, 0.4);
+  --neon-emerald: #ec4899;
+  --neon-emerald-glow: rgba(236, 72, 153, 0.4);
+  --neon-red: #ff3366;
+  --neon-red-glow: rgba(255, 51, 102, 0.4);
+  --neon-gold: #ffd700;
+  --neon-gold-glow: rgba(255, 215, 0, 0.4);
+  --text-primary: #ffffff;
+  --text-secondary: #fbcfe8;
+  --text-muted: #f472b6;
+  --glass-border: rgba(236, 72, 153, 0.15);
+  --glass-bg: rgba(24, 6, 20, 0.8);
+  --body-bg: #130214;
+  --grid-color: rgba(236, 72, 153, 0.015);
+  --dropdown-bg: #130214;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  
+  /* Cyberpunk Grid Background */
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center;
+}
+
+.font-arcade {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrollbars for panel container */
+.glass-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.glass-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.glass-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+.glass-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Keyboards style */
+.key-kbd {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: var(--text-primary);
+  display: inline-block;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px 8px;
+  min-width: 26px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Neon buttons styling */
+.btn-neon {
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neon.btn-cyan {
+  background: linear-gradient(135deg, var(--neon-cyan), #00a8cc);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+.btn-neon.btn-cyan:hover {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+  transform: translateY(-2px);
+}
+.btn-neon.btn-cyan:active {
+  transform: translateY(0);
+}
+
+.btn-neon.btn-pink {
+  background: linear-gradient(135deg, var(--neon-pink), #cc0052);
+  box-shadow: 0 0 15px rgba(255, 42, 116, 0.3);
+}
+.btn-neon.btn-pink:hover {
+  box-shadow: 0 0 25px rgba(255, 42, 116, 0.6);
+  transform: translateY(-2px);
+}
+.btn-neon.btn-pink:active {
+  transform: translateY(0);
+}
+
+/* Subtle Settings Buttons */
+.btn-subtle {
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-secondary);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.btn-subtle:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+.btn-subtle.active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Slide Toggle Switch */
+.switch-track {
+  position: relative;
+  width: 76px;
+  height: 28px;
+  background-color: rgba(255, 42, 116, 0.1);
+  border: 1px solid var(--neon-pink);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(255, 42, 116, 0.15);
+}
+
+.switch-track.active {
+  background-color: rgba(5, 242, 199, 0.1);
+  border-color: var(--neon-emerald);
+  box-shadow: 0 0 10px rgba(5, 242, 199, 0.15);
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--neon-pink);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px var(--neon-pink);
+}
+
+.switch-track.active .switch-thumb {
+  left: 51px;
+  background-color: var(--neon-emerald);
+  box-shadow: 0 0 8px var(--neon-emerald);
+}
+
+/* Ouroboros Animation */
+@keyframes ouroboros-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ouroboros-spin {
+  animation: ouroboros-spin 12s linear infinite;
+  transform-origin: center;
+}
+
+/* Pulse animation for HUD overlay */
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+.neon-pulse-cyan {
+  box-shadow: inset 0 0 20px rgba(0, 229, 255, 0.2);
+  animation: neon-pulse 2s infinite ease-in-out;
+}
+.neon-pulse-pink {
+  box-shadow: inset 0 0 20px rgba(255, 42, 116, 0.2);
+  animation: neon-pulse 2s infinite ease-in-out;
+}
+.neon-pulse-purple {
+  box-shadow: inset 0 0 20px rgba(176, 38, 255, 0.2);
+  animation: neon-pulse 2s infinite ease-in-out;
+}
+
+/* Theme Select Container & Dropdown */
+.theme-select-container {
+  position: relative;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.theme-select-container:hover {
+  transform: translateY(-2px);
+}
+
+.theme-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  background: rgba(255, 42, 116, 0.05); /* same as Rules button background */
+  border: 1px solid rgba(255, 42, 116, 0.15);
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: 0 0 15px rgba(255, 42, 116, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.theme-select-container:hover .theme-select {
+  box-shadow: 0 0 25px rgba(255, 42, 116, 0.45);
+  border-color: rgba(255, 42, 116, 0.4);
+}
+
+.dropdown-option {
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-option:hover {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: var(--text-primary) !important;
+}
+
+.dropdown-option.active {
+  background-color: rgba(255, 42, 116, 0.08) !important;
+  color: var(--neon-pink) !important;
+}
