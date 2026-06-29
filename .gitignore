@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Package Locks
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Build Outputs
+dist/
+build/
+.cache/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.sw?
