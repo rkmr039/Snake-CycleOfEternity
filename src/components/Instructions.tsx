@@ -15,8 +15,8 @@ export const Instructions: React.FC<InstructionsProps> = ({ onBackToMenu, playSo
     <div
       className="glass-panel"
       style={{
-        width: '100%',
-        maxWidth: '460px',
+        width: 'var(--panel-width)',
+        maxWidth: '95vw',
         padding: '24px 20px 16px 20px',
         display: 'flex',
         flexDirection: 'column',
@@ -78,6 +78,7 @@ export const Instructions: React.FC<InstructionsProps> = ({ onBackToMenu, playSo
 
       {/* Scrollable Container Content */}
       <div
+        className="no-scrollbar"
         style={{
           width: '100%',
           overflowY: 'auto',

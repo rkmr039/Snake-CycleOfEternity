@@ -83,8 +83,8 @@ export const Menu: React.FC<MenuProps> = ({
     <div
       className="glass-panel"
       style={{
-        width: '100%',
-        maxWidth: '420px',
+        width: 'var(--panel-width)',
+        maxWidth: '95vw',
         padding: '40px 24px',
         display: 'flex',
         flexDirection: 'column',
@@ -171,7 +171,7 @@ export const Menu: React.FC<MenuProps> = ({
             ))}
           </div>
         </div>
-        
+
         {/* Theme Selector */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 'bold' }}>VISUAL THEME ENGINE</label>

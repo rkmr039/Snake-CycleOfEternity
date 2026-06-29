@@ -27,6 +27,7 @@
   --body-bg: #030712;
   --grid-color: rgba(0, 229, 255, 0.015);
   --dropdown-bg: #060b19;
+  --panel-width: 440px;
 }
 
 body[data-theme='forest-green'] {
@@ -320,4 +321,15 @@ body {
 .dropdown-option.active {
   background-color: rgba(255, 42, 116, 0.08) !important;
   color: var(--neon-pink) !important;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
